@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Interview Question Generator</h2>
+
+<form method="POST">
+
+{% csrf_token %}
+
+<input type="text" name="role" class="form-control" placeholder="Enter job role">
+
+<br>
+
+<button class="btn btn-primary">Generate Questions</button>
+
+</form>
+
+
+{% if questions %}
+
+<div class="mt-4">
+
+<h4>Generated Questions</h4>
+
+<p>{{ questions }}</p>
+
+</div>
+
+{% endif %}
+
+{% endblock %}

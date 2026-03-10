@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2 class="mb-4">AI Career Assistant Dashboard</h2>
+
+<div class="row g-4">
+
+```
+<!-- Resume Analyzer -->
+<div class="col-md-4">
+    <div class="card shadow">
+        <div class="card-body">
+            <h5 class="card-title">Resume Analyzer</h5>
+            <p>Analyze resume skills and calculate ATS score</p>
+            <a href="/resume" class="btn btn-primary">Open</a>
+        </div>
+    </div>
+</div>
+
+<!-- Interview Question Generator -->
+<div class="col-md-4">
+    <div class="card shadow">
+        <div class="card-body">
+            <h5 class="card-title">Interview Questions</h5>
+            <p>Generate AI interview questions</p>
+            <a href="/interview" class="btn btn-primary">Open</a>
+        </div>
+    </div>
+</div>
+
+<!-- Job Tracker -->
+<div class="col-md-4">
+    <div class="card shadow">
+        <div class="card-body">
+            <h5 class="card-title">Job Tracker</h5>
+            <p>Track your job applications</p>
+            <a href="/tracker" class="btn btn-primary">Open</a>
+        </div>
+    </div>
+</div>
+
+<!-- Career Roadmap -->
+<div class="col-md-4">
+    <div class="card shadow">
+        <div class="card-body">
+            <h5 class="card-title">Career Roadmap</h5>
+            <p>Generate AI career learning roadmap</p>
+            <a href="/roadmap" class="btn btn-primary">Open</a>
+        </div>
+    </div>
+</div>
+
+<!-- Resume vs Job Match -->
+<div class="col-md-4">
+    <div class="card shadow">
+        <div class="card-body">
+            <h5 class="card-title">Resume Job Match</h5>
+            <p>Check resume vs job description match score</p>
+            <a href="/jobmatch" class="btn btn-primary">Open</a>
+        </div>
+    </div>
+</div>
+```
+
+</div>
+
+{% endblock %}

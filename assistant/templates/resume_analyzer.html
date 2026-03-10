@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Resume Analyzer</h2>
+
+<form method="POST" enctype="multipart/form-data">
+
+{% csrf_token %}
+
+<input type="file" name="resume" class="form-control">
+
+<br>
+
+<button class="btn btn-success">Analyze Resume</button>
+
+</form>
+
+
+{% if result %}
+
+<h4 class="mt-4">ATS Score</h4>
+
+<div class="alert alert-success">
+
+<h3>{{ result.ats_score }}/100</h3>
+
+</div>
+
+
+<h4>Skills Found</h4>
+
+<ul>
+
+{% for skill in result.skills %}
+
+<li>{{ skill }}</li>
+
+{% endfor %}
+
+</ul>
+
+
+<h4>Missing Skills</h4>
+
+<ul>
+
+{% for skill in result.missing_skills %}
+
+<li>{{ skill }}</li>
+
+{% endfor %}
+
+</ul>
+
+{% endif %}
+
+{% endblock %}

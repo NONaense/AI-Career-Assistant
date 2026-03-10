@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>AI Career Roadmap Generator</h2>
+
+<form method="POST">
+
+{% csrf_token %}
+
+<input type="text" name="role" class="form-control" placeholder="Enter career (ex: Data Scientist)">
+
+<br>
+
+<button class="btn btn-primary">Generate Roadmap</button>
+
+</form>
+
+
+{% if roadmap %}
+
+<div class="mt-4">
+
+<h4>Your Roadmap</h4>
+
+<p>{{ roadmap }}</p>
+
+</div>
+
+{% endif %}
+
+{% endblock %}

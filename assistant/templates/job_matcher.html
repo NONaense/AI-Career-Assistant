@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Resume vs Job Match Analyzer</h2>
+
+<form method="POST" enctype="multipart/form-data">
+
+{% csrf_token %}
+
+<label>Upload Resume</label>
+
+<input type="file" name="resume" class="form-control">
+
+<br>
+
+<label>Paste Job Description</label>
+
+<textarea name="job_description" class="form-control" rows="6"></textarea>
+
+<br>
+
+<button class="btn btn-primary">Analyze Match</button>
+
+</form>
+
+
+{% if result %}
+
+<div class="mt-4">
+
+<h4>Match Score</h4>
+
+<div class="alert alert-success">
+
+<h3>{{ result.score }}%</h3>
+
+</div>
+
+<h5>Matched Skills</h5>
+
+<ul>
+
+{% for skill in result.matched %}
+
+<li>{{ skill }}</li>
+
+{% endfor %}
+
+</ul>
+
+<h5>Missing Skills</h5>
+
+<ul>
+
+{% for skill in result.missing %}
+
+<li>{{ skill }}</li>
+
+{% endfor %}
+
+</ul>
+
+</div>
+
+{% endif %}
+
+{% endblock %}
